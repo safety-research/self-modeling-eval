@@ -1,0 +1,19 @@
+# Registry - Maps benchmarks to domains.
+# Only the four benchmarks sampled by the mixed self-modeling eval are listed.
+
+benchmarks:
+  gsm8k:
+    domain: math
+    description: "Grade school math word problems (OpenAI GSM8K)"
+
+  humaneval:
+    domain: coding
+    description: "Python code generation (OpenAI HumanEval)"
+
+  wildguardtest:
+    domain: safety
+    description: "Mixed harmful/benign prompts (AllenAI WildGuardMix)"
+
+  bbq:
+    domain: fairness
+    description: "Bias Benchmark for QA - fairness/bias testing (HuggingFace heegyu/bbq)"

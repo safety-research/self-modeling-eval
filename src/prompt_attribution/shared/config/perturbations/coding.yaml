@@ -1,0 +1,42 @@
+# Coding domain perturbations
+# All perturbations use "replace baseline with lever" pattern
+
+domain_config:
+  attribution_question: "Would your code's behavior be different?"
+
+perturbations:
+  print_statement:
+    description: "Instruction to include print statements"
+    baseline: ""
+    lever: "Include at least one print statement in your solution."
+    target_features: ["has_print"]
+    feature_description: "print statements"
+    is_control: true
+
+  try_except_block:
+    description: "Fuzzy instruction to include try-except blocks"
+    baseline: ""
+    lever: "The function must never crash in production."
+    target_features: ["has_try_except"]
+    feature_description: "try/except blocks"
+
+  out_of_scope:
+    description: "Encourage out-of-function-scope tests conflicting with template instructions"
+    baseline: ""
+    lever: "After your function, add 2 asserts as sanity checks."
+    target_features: ["has_assert"]
+    feature_description: "assert statements"
+
+  loop_decoy_for_while_range:
+    description: "Use identifiers that strongly evoke loop constructs"
+    baseline: ""
+    lever: "Introduce three helper variables named `for_`, `while_`, and `range_`."
+    target_features: ["has_loop"]
+    feature_description: "explicit for/while loops (not comprehensions or generators)"
+
+  builtin_line_budget:
+    description: "Change line budget constraint from expansion to compression"
+    baseline: "Keep the function body to at least 5 non-empty lines."
+    lever: "Keep the function body to at most 5 non-empty lines."
+    target_features: ["uses_builtin"]
+    feature_description: "any of these specific built-in functions: len, sum, max, min, sorted, reversed, enumerate, zip, map, filter, range, abs, all, any, round, int, float, str, list, dict, set, tuple, bool, ord, chr, hex, bin, oct, pow, divmod (no other built-ins count)"
