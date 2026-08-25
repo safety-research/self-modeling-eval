@@ -1,5 +1,9 @@
 # Self-Modeling Eval
 
+This is the official repository implementing the self-modeling benchmark
+(E1–E10) from Evaluating and Improving LLM Self-Modeling at the 2026
+Conference on Empirical Methods in Natural Language Processing (EMNLP 2026).
+
 A 10-eval self-modeling benchmark (E1–E10) that asks a language model to
 predict aspects of its own behavior on perturbed prompts — will my answer
 flip? what would my new answer be? which of these three perturbations
@@ -200,4 +204,16 @@ patches/safetytooling/                          # files overlaid on installed sa
 scripts/
   experiments/run_self_modeling_mixed.py       # entry point
   setup/apply_safetytooling_patches.py         # post-install patcher
+```
+
+## Citation
+
+```bibtex
+@inproceedings{zeng2026evaluating,
+  title={Evaluating and Improving {LLM} Self-Modeling},
+  author={Siqi Zeng and Andre N. Assis and Rowan Wang},
+  booktitle={The 2026 Conference on Empirical Methods in Natural Language Processing},
+  year={2026},
+  url={https://openreview.net/forum?id=GdUcIPKke1}
+}
 ```
